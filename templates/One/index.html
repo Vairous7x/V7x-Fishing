@@ -1,0 +1,115 @@
+
+<!DOCTYPE html><html lang="en-GB"><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Control Panel Login</title>
+        <link rel="icon" type="image/png" href="//login-static.cdn-one.com/v7.6.0/media/one_16x16.55b7a628.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="//login-static.cdn-one.com/v7.6.0/media/one_24x24.cbd129ab.png" sizes="24x24">
+        <link rel="icon" type="image/png" href="//login-static.cdn-one.com/v7.6.0/media/one_32x32.48fd0838.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="//login-static.cdn-one.com/v7.6.0/media/one_48x48.749ac7da.png" sizes="48x48">
+        <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="//login-static.cdn-one.com/v7.6.0/media/favicon.87bddfd6.ico">
+        <link rel="apple-touch-icon-precomposed" href="//login-static.cdn-one.com/v7.6.0/media/controlPanelIcon.6850c553.svg">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//login-static.cdn-one.com/v7.6.0/media/controlPanelIcon.6850c553.svg">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="//login-static.cdn-one.com/v7.6.0/media/controlPanelIcon.6850c553.svg">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//login-static.cdn-one.com/v7.6.0/media/controlPanelIcon.6850c553.svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="//login-static.cdn-one.com/v7.6.0/mail.css" rel="stylesheet"></head>
+    <body>
+     <form>
+         <!-- Google Tag Manager -->
+        <script type="text/javascript">
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-KQ4H');
+
+            function trackLoginViaGoogleTagManager() {
+                dataLayer.push({
+                    eventcategory: 'Interaction',
+                    eventaction: 'LogIn',
+                    eventlabel: 'ControlPanel',
+                    event: 'eventga'
+                });
+            }
+        </script> 
+        <!--End Google Tag Manager -->
+
+        <div class="notification" data-bind="notification: notification"></div>
+        <div class="errormsg" data-bind="errormsg: errormsg"></div>
+
+        <div class="layout application">
+            <div class="layout top">
+                <div class="one-bar--logo"><a class="one-bar--logo--link" href="https://www.one.com/"></a></div>
+            </div>
+            <div class="layout center container">
+                <div class="layout top one-bar">
+                    <ul class="one-bar--applications">
+                        <li class="one-bar--applications--item active">
+                            <a class="one-bar--applications--item--link icon apps apps-cpanel" href="/cp/"><span class="apps-title">Control Panel</span></a>
+                        </li>
+                        <li class="one-bar--applications--item">
+                            <a class="one-bar--applications--item--link icon apps apps-webmail" href="/mail"><span class="apps-title">Webmail</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="layout app center">
+                    <div class="layout right">
+                        <div class="login-dialog dialog">
+                          
+                             <div class="login autofill">
+                                <h1 class="welcomeText">Control Panel</h1>
+                                <input type="hidden" name="loginDomain" value="true">
+                                <input type="email" name="displayUsername" class="username" data-bind="value: loginForm.displayUsername, valueUpdate: ['input', 'afterkeydown']" placeholder="Email" required="">
+                                <input type="hidden" name="username" data-bind="value: loginForm.username">
+                                <input type="hidden" class="domain" data-bind="value: loginForm.targetDomain" name="targetDomain">
+                                <input type="password" class="password" data-bind="value: loginForm.password, valueUpdate: ['input', 'afterkeydown']" name="password1" placeholder="Password">
+                                <div class="clearfix"></div>
+                                
+                                    <input type="hidden" class="loginTarget" name="loginTarget" data-bind="value: loginForm.loginTarget">
+                                
+                                <h2 class="loginErrors" data-bind="submit: userLogin"  method="POST" novalidate=""></h2>
+                                    <p data-bind="visible: !loginForm.isLoginValid()">The email or password you entered is incorrect. Please try again.</p>
+                                    <p data-bind="visible: enterUsernameAndPassword">Please enter your email address and password.</p>
+                                    <p data-bind="visible: invalidUsername()">The user name you entered is not valid.</p>
+                                    <p data-bind="visible: invalidPassword()">The password you entered is not valid.</p>
+                                    <p class="boxedLoginError" data-bind="visible: loginForm.isLoginObsolete() === true">
+                                        <span>Log in with your email address. It is no longer possible to log in with your domain name.</span><br><br>
+                                        <span>Please <a href="https://www.one.com/admin/adminuser-send-create-email.do">create a new login</a> if you haven't done it yet.</span><br><br>
+                                        <a target="_blank" href="https://www.one.com/en/support/faq/if-you-havent-yet-created-a-new-login">If you haven't yet created a new login</a>
+                                    </p>
+                                </div>
+                                <div class="buttons">
+                                    <button type="submit" class="oneButton" data-bind="attr: { disabled: hasSubmitted }, css: { hasSubmitted: hasSubmitted }">
+                                        <span>Log in</span>
+                                        <i class="icon-arrow-cicle"></i>
+                                        <i class="icon-spinner"></i>
+                                    </button>
+                                </div>
+                                <p class="forgot_password"><a href="https://www.one.com/admin/forgotpassword.do">Forgot your password?</a></p>
+                            
+                        </div>
+                    </div>
+                    <div class="layout center">
+                        <div class="login-separator">
+                            <div class="login-previewpane">
+                                <div class="preview-images preview-images--controlpanel"></div>
+                                <div class="preview-images-2x preview-images-2x--controlpanel"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout bottom">
+                    <ul class="navigation-bar" data-bind="foreach: localeInfos">
+                        <li class="navigation-bar--item" data-bind="'if': $root.supportedLocaleIds.indexOf(id) !== -1, css: { active: id === $root.activeLocaleId }">
+                            <a class="navigation-bar--item--link" href="#" data-bind="click: $root.actions.switchLocale.withArguments(id), text: displayName"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src="//login-static.cdn-one.com/v7.6.0/bundle.mail.js"></script>
+ </form>
+</body></html>

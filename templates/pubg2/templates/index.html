@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PLAYERUNKNOWN'S BATTLEGROUNDS</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="{{ url_for('static',filename='javascript.js') }}"></script>
+  </head>
+
+  <body>
+
+<nav class="navbare">
+
+<div class="main">
+
+<div class="logo">
+
+<img src="{{ url_for('static',filename='image/logo.png') }}">
+
+  </div>
+
+  <div class="lang">
+   <img src="{{ url_for('static',filename='image/language.png') }}" onclick="lan()">
+
+   <div class="lang-list" id="lang-list">
+   <li><a href="#">الانجليزية</a></li>
+   <li><a href="#">الفرنسية</a></li>
+   <li><a href="#">الاسبانية</a></li>
+   <li><a href="#">الاردنية</a></li>
+   <li><a href="#">الارمنية</a></li>
+   <li><a href="#">الالمانية</a></li>
+   <li><a href="#">الاندنوسية</a></li>
+   <li><a href="#">الاوكرانية</a></li>
+   <li><a href="#">البلغارية</a></li>
+   <li><a href="#">البنجابية</a></li>
+   <li><a href="#">البورمية</a></li>
+   <li><a href="#">الصينية</a></li>
+
+   </div>
+  </div>
+
+  <div class="menu" onclick="men()">
+                <span></span>
+                   <span></span>
+                <span></span>
+
+   </div>
+
+<div id="main">
+
+  <ul>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">أخبار</a></li>
+      <li><a href="#">المجتمع</a></li>
+      <li><a href="#">بضائع</a></li>
+      <li><a href="#">دعم</a></li>
+      <li><a href="#">تسجيل الدخول</a></li>
+      <li><a href="#">اشتر الان</a></li>
+  </ul>
+  </div>
+</div>
+  </nav>
+
+<main class="container">
+<div id="container2">
+<div class="container3">
+<div class="desc-sub">
+<h1>تسجيل الدخول لشحن رصيدك في لعبة PUBG مجانا </h1>
+</div>
+<div class="social-icons">
+  <a href="#form">
+<img src="{{ url_for('static',filename='image/fac.jpg') }}">
+<img src="{{ url_for('static',filename='image/tw.jpg') }}">
+<img src="{{ url_for('static',filename='image/insta.jpg') }}">
+</a>
+</div>
+
+<div class="or">
+  <br>
+<hr style="width:50%;">
+<h3 class="h3">OR</h3>
+</div>
+<form id="form">
+<input type="text" name="id" class="input" placeholder="Enter Id" required>
+<br>
+<input type="name" name="username"class="input" placeholder="User name" required>
+<br>
+<input type="email" name="email" class="input" placeholder="Email" required>
+<br>
+<input type="password"  name="password" class="input" placeholder="password" required>
+<br>
+<input type="submit" class="submit" value="تسجيل الدخول">
+</form>
+</div>
+</div>
+
+</main>
+
+<footer class="footer">
+
+<div class="oper">
+
+<div class="work">
+<h3>وظائف</h3>
+</div>
+
+<div class="icons-footer">
+  <div class="icon">
+  <i class="fab fa-facebook"></i>
+  </div>
+
+  <div class="icon">
+  <i class="fab fa-twitter"></i>
+  </div>
+
+  <div class="icon">
+  <i class="fab fa-instagram"></i>
+  </div>
+
+  <div class="icon">
+  <i class="fab fa-linkedin-in"></i>
+  </div>
+</div>
+</div>
+<hr style="margin-right:5em;">
+<div class="policy">
+<a href="#">سياسة الخصوصية</a>
+<a href="#">شروط الخدمة</a>
+<a href="#">قواعد السلوك</a>
+<a href="#">ترخيص المستخدم النهائي</a>
+<a href="#">محتوى أنشأه اللاعب</a>
+
+</div>
+
+</footer>
+
+  </body>
+</html>

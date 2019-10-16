@@ -1,0 +1,12 @@
+[32mForwarding HTTP traffic from https://reddit-80309.serveo.net
+[0mPress g to start a GUI session and ctrl-c to quit.
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/login.ec234f177c42a52ad0ff.js
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/favicon.ico
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/login.php
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/?cookie_domain=.reddit.com&dest=https%3A%2F%2Fwww.reddit.com&csrf_token=d7e02ce02b5a413cbabab70694e785b00160040c&is_oauth=False&username=%D9%88%D8%A9%D9%89%D9%84%D8%A7%D8%B1%D8%A4&password=%D9%88%D8%A9%D9%89%D9%84%D8%A7%D8%B1&otp=&otp-type=app
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/login.ec234f177c42a52ad0ff.js
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/favicon.ico
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/login.ec234f177c42a52ad0ff.js
+HTTP request from 87.150.125.57 to https://reddit-80309.serveo.net/login.ec234f177c42a52ad0ff.js

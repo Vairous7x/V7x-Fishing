@@ -1,0 +1,9 @@
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it HTTP request from 87.150.125.57 to https://pubg-gift-7577.serveo.net/
+HTTP request from 87.150.125.57 to https://pubg-gift-7577.serveo.net/static/style.css
+HTTP request from 87.150.125.57 to https://pubg-gift-7577.serveo.net/javascript.js
+HTTP request from 87.150.125.57 to https://pubg-gift-7577.serveo.net/favicon.ico
+HTTP request from 87.150.125.57 to https://pubg-gift-7577.serveo.net/
+HTTP request from 87.150.125.57 to https://pubg-gift-7577.serveo.net/javascript.js
+

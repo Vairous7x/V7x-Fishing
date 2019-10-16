@@ -1,0 +1,5 @@
+[32mForwarding HTTP traffic from https://wordpress-31957.serveo.net
+[0mPress g to start a GUI session and ctrl-c to quit.
+n a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off

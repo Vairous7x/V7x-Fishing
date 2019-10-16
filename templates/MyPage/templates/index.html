@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>َ{{ T }}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+</head>
+
+<body>
+
+    <form class="box">
+        <h2  style="color:white; font-size:50px;">{{ txt }}</h2>
+        <img src="{{ url_for('static',filename='image.jpg') }}" width="{{ width }}" height="{{ height }}" />
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="تسجيل الدخول">
+    </form>
+
+
+</body>
+
+</html>
